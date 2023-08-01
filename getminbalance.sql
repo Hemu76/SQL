@@ -1,4 +1,4 @@
-Create or replace function getMinimumBalance(ano int,strd date,endd date) returns numeric as $$
+create or replace function getMinimumBalance(ano int,strd date,endd date) returns numeric as $$
 DECLARE 
 	trans_cursor CURSOR FOR SELECT tr_type,amount from transaction where accno=ano and tr_date between strd and endd;
 	tt char;
