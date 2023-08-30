@@ -1,0 +1,51 @@
+<%@ page language="java" import="ms.*"
+    contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #666;
+        }
+        h3 {
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% Patient p = (Patient) request.getAttribute("patient"); %>
+        <% int pid = (int) request.getAttribute("pid"); %>
+        <% String apid = ""+ request.getAttribute("appid"); %>
+        <h1>Appointment Successfully Booked</h1>
+        <h2>Appointment Details</h2>
+        <h2>Appointment ID:<%= apid %></h2>
+        <h2>Appointment Date:<%= p.getAdate() %></h2>
+        <h2>Appointment Time:<%= p.getTime() %></h2>
+        <h2>Patient Name:<%= p.getPtn_name() %></h2>
+        <h2>Patient ID:<%= pid %></h2>
+        <h2>Patient Mobile:<%= p.getPtn_mobile() %></h2>
+        <h2>Doctor ID:<%= p.getDocid() %></h2>
+        <h2>Slot ID:<%= p.getSid() %></h2>
+    </div>
+</body>
+</html>
